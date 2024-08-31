@@ -1,0 +1,14 @@
+$table->foreignId('admins_id')->nullable()->constrained()->cascadeOnupdate()->nullOnDelete();
+            $table->foreignId('groupe_id')->nullable()->constrained()->cascadeOnupdate()->nullOnDelete();
+            $table->integer('etat');
+            $table->integer('deletable');
+
+
+  public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function groupe()
+    {
+        return $this->belongsTo(groupe::class);

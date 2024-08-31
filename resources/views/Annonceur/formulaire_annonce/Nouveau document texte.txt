@@ -1,0 +1,397 @@
+         <script type="text/javascript">
+  var images=[];
+   function image_select(){
+    var image= document.getElementById('image').files;
+    for(i=0 ; i<image.length; i++){
+      if(check_duplicate(image[i].name))
+      {
+        images.push({
+        "name" : image[i].name,
+        "url": URL.createObjectURL(image[i]),
+        "file": image[i],
+     })
+
+     $.ajax({
+            dataType: "json",
+            url:  URL.createObjectURL(image[i]),
+            type: "POST",
+            
+        });
+      }else{
+        alert(image[i].name+ "Est déjà ajouté à la liste");
+      }
+    
+    }
+
+    document.getElementById('contt').innerHTML= image_show();
+    document.getElementById('forms').reset();
+   }
+   function image_show(){
+    var image=" ";
+    images.forEach((i)=> {
+      image +='<div class="image_container d-flex justify-content-center position-relative"> <img src="'+i.url+'" alt="Image">  <span class="position-absolute" onclick="delete_image('+images.indexOf(i)+')">&times;</span> </div>';
+    })
+    return image;
+  }
+
+  function delete_image(e){
+   images.splice(e, 1);
+   document.getElementById('contt').innerHTML= image_show();
+  }
+
+  function check_duplicate(name){
+    var image= true;
+    if(images.length>0)
+    {
+    for (e=0; e<images.length; e++){
+       if(images[e].name== name){
+        image=false;
+        break;
+       }
+    }
+  }
+    return image;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="exampleModalCenters" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body" style="text-align:center;justify-content:center;">
+                    <div class="row d-flex" style="background: teal;text-align:center;justify-content:center;align-items:center;">
+
+{{-- 111111111111111111111111111111111 --}}
+
+         {{-- 222222222222222222222 --}}
+                        <div class="col-sm-12 col-md-3 col-lg-6" style="display:flex;background: #f5af09;text-align:center;justify-content:center;align-items:center;">
+                            <!-- Nav tabs -->
+                            <div class="dashboard_tab_button d-flex" data-aos="fade-up" data-aos-delay="0">
+                                <ul role="tablist" class="nav  dashboard-list" style="background: green;display:flex;">
+
+                                    <li style="padding: 5px;"> <a href="#orders" style="width: 90px;height:90px;align-items:center;justify-content:center;text-align:center;" data-bs-toggle="tab"
+                                            class="nav-link btn btn-block btn-md btn-black-default-hover active">Xeweul <i class="fa fa-user" style="font-size: 20px;"></i></a></li>
+                                    <li style="padding: 5px;"><a href="#account-details" data-bs-toggle="tab" style="width: 90px;height:90px;"
+                                            class="nav-link btn btn-block btn-md btn-black-default-hover" >Pro Teranga</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+ {{-- 222222222222222222222222222222222 --}}
+
+
+
+{{-- 33333333333333333333333333333333333 --}}
+                            <div class="col-sm-12 col-md-9 col-lg-9">
+                                <!-- Tab panes -->
+                                {{-- 444444444444444444444444444444444444 --}}
+                                <div class="tab-content dashboard_content" data-aos="fade-up" data-aos-delay="200">
+{{-- 5555555555555555555555555555555555555 --}}
+                                    <div class="tab-pane fade show active" id="orders" style="box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;;margin-top:20px;
+                                    background:#ad0a0a;color:white;text-align: center;align-items:center;justify-content:center;display:flex;
+                                    ">
+                                    {{-- 666666666666666666666666666666 --}}
+                                        <div class="login"  style="margin-left:10px;">
+                                            {{-- 777777777777777777777777777777777777777 --}}
+                                            <div class="login_form_container">
+
+
+                                                    <form  style="margin-left: 23px;" action="{{route('app.update',Auth::user()->id)}}"  method="POST" enctype="multipart/form-data">
+                                                        <div class="account_login_form" style="text-align: center;align-items:center;justify-content:center;display:block;">
+                                                <h6 class="title">Condimentum posuere</h6>
+                                                        <div class="col-12 d-block" style="background: blue;">
+                                                        <div class="col-12 d-block" style="background: #f5af09;">
+                                                <ul class="review-star col-12" style="display:flex;background:green;">
+                                                    <li class="fill col-6" style="float:left;"><i class="ion-android-picture"></i>Photo</li>
+                                                    <li class="fill col-6" style="text-align:right;float: right;">      7</li>
+                                                </ul>
+                                                <ul class="review-star col-12" style="display:flex;background:green;">
+                                                    <li class="fill col-6" style="float:left;"><i class="ion-android-picture"></i>Photo</li>
+                                                    <li class="fill col-6" style="text-align:right;float: right;">      7</li>
+                                                </ul>
+                                                <ul class="review-star col-12" style="display:flex;background:green;">
+                                                    <li class="fill col-6" style="float:left;"><i class="ion-android-picture"></i>Photo</li>
+                                                    <li class="fill col-6" style="text-align:right;float: right;">      7</li>
+                                                </ul>
+
+                                                        </div>
+                                                        </div>
+                                                        <div class="col-12 d-flex">
+                                                        <ul class="col-12 d-flex" style="text-align: center;">
+                                                            <li style="padding: 5px;"><a href="#"  style="width: 50px;height:50px;text-align:center;display:flex;align-items:center;justify-content:center;"
+                                                                class="nav-link btn btn-block btn-md btn-black-default-hover" >1 mois</a>
+                                                        </li>
+                                                        <li style="padding: 5px;"><a href="#" style="width: 50px;height:50px;text-align:center;display:flex;align-items:center;justify-content:center;"
+                                                            class="nav-link btn btn-block btn-md btn-black-default-hover" >3 mois</a>
+                                                    </li>
+                                                    <li style="padding: 5px;text-align:center;"><a href="#" style="width: 50px;height:50px;text-align:center;align-items:center;justify-content:center;display:flex;"
+                                                        class="nav-link btn btn-block btn-md btn-black-default-hover" >3 mois</a>
+                                                </li>
+                                                        </ul>
+                                                        </div>
+                                                        <div class="content-right">
+                                                            <span class="price"><button class="btn btn-success">Acheter 1000 FCFA</button></span>
+                                                        </div>
+
+                                            </div>
+
+                                                    </form>
+                                        </div>
+                                        {{--  --}}
+                                        </div>
+{{-- 6666666666666666666666666666666666666666666666666 --}}
+                                    </div>
+                                    {{-- 5555555555555555555555555555555555555555555555 --}}
+                                    <div class="tab-pane fade" id="downloads">
+                                        <h4>Downloads</h4>
+                                        <div class="table_page table-responsive">
+                                            <table>
+
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                    <div class="tab-pane fade" id="account-details" style="box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;;margin-top:20px;
+                                    background:#ad0a0a;color:white;text-align: center;align-items:center;justify-content:center;display:flex;
+                                    ">
+
+
+                                        <div class="login"  style="margin-left:10px;">
+                                            <div class="login_form_container">
+
+
+                                                    <form  style="margin-left: 23px;" action="{{route('app.update',Auth::user()->id)}}"  method="POST" enctype="multipart/form-data">
+                                                        <div class="account_login_form" style="text-align: center;align-items:center;justify-content:center;display:block;">
+                                                <h6 class="title">Condimentum</h6>
+                                                        <div class="col-12 d-block" style="background: blue;">
+                                                        <div class="col-12 d-block" style="background: #f5af09;">
+                                                <ul class="review-star col-12" style="display:flex;background:green;">
+                                                    <li class="fill col-6" style="float:left;"><i class="ion-android-picture"></i>Photo</li>
+                                                    <li class="fill col-6" style="text-align:right;float: right;">      7</li>
+                                                </ul>
+                                                <ul class="review-star col-12" style="display:flex;background:green;">
+                                                    <li class="fill col-6" style="float:left;"><i class="ion-android-picture"></i>Photo</li>
+                                                    <li class="fill col-6" style="text-align:right;float: right;">      7</li>
+                                                </ul>
+                                                <ul class="review-star col-12" style="display:flex;background:green;">
+                                                    <li class="fill col-6" style="float:left;"><i class="ion-android-picture"></i>Photo</li>
+                                                    <li class="fill col-6" style="text-align:right;float: right;">      7</li>
+                                                </ul>
+
+                                                        </div>
+                                                        </div>
+                                                        <div class="col-12 d-flex">
+                                                        <ul class="col-12 d-flex" style="text-align: center;">
+                                                            <li style="padding: 5px;"><a href="#"  style="width: 50px;height:50px;text-align:center;display:flex;align-items:center;justify-content:center;"
+                                                                class="nav-link btn btn-block btn-md btn-black-default-hover" >1 mois</a>
+                                                        </li>
+                                                        <li style="padding: 5px;"><a href="#" style="width: 50px;height:50px;text-align:center;display:flex;align-items:center;justify-content:center;"
+                                                            class="nav-link btn btn-block btn-md btn-black-default-hover" >3 mois</a>
+                                                    </li>
+                                                    <li style="padding: 5px;text-align:center;"><a href="#" style="width: 50px;height:50px;text-align:center;align-items:center;justify-content:center;display:flex;"
+                                                        class="nav-link btn btn-block btn-md btn-black-default-hover" >3 mois</a>
+                                                </li>
+                                                        </ul>
+                                                        </div>
+
+                                            </div>
+                                            <div class="content-right">
+                                                <span class="price"><button class="btn btn-success">Acheter 1000 FCFA</button></span>
+                                            </div>
+                                            <div class="modal-footer" style="text-align:center;justify-content:center;color:white;">
+                                                <button type="button"  class="btn  btn-danger " style="color: white;" id="modal-close" data-bs-dismiss="modal">Annuler</button>
+                                                <button type="submit" name="edit_prof" class="btn  btn-danger" style="color: white;">Confirmer</button>
+                                            </div>
+                                  </form>
+                                        </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                {{-- 4444444444444444444444444444444444444 --}}
+                                </div>
+{{-- 33333333333333333333333333333333333333 --}}
+
+
+                                {{--11111111111111111111111111111111 --}}
+                            </div>
+
+
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+<style>
+
+
+
+    #display-image .fa{
+    font-size:90px;
+    background: red;
+
+    }
+    .rek{
+    display: inline-block;
+    }
+    #display-image{
+    width:95px;
+    justify-content: center;
+    margin-left: 50px;
+    margin-top: 10px;
+    height:100px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+
+    background-position: center;
+    background-size: cover;
+    }
+
+
+    .fs{
+    display: flex;
+    width:auto;
+    }
+
+     input[type="file"]{
+    display: none;
+    }
+
+    .c2 label{
+    color:white;
+    height:40px;
+    width:200px;
+    background-color: #f5af09;
+
+    font-family:"Montserrat",sans-serif;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .dd{
+    display: flex;
+    }
+
+
+
+                   </style>
+      <style>
+
+
+
+        #display-image .fa{
+        font-size:90px;
+        background: red;
+
+        }
+        .rek{
+        display: inline-block;
+        }
+        #display-image{
+        width:95px;
+        justify-content: center;
+        margin-left: 50px;
+        margin-top: 10px;
+        height:100px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+
+        background-position: center;
+        background-size: cover;
+        }
+
+
+        .fs{
+        display: flex;
+        width:auto;
+        }
+
+         input[type="file"]{
+        display: none;
+        }
+
+        .c2 label{
+        color:white;
+        height:40px;
+        width:200px;
+        background-color: #f5af09;
+
+        font-family:"Montserrat",sans-serif;
+        font-size: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+
+        .dd{
+        display: flex;
+        }
+
+
+
+                       </style>

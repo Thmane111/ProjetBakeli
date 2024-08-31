@@ -1,0 +1,292 @@
+<div class="column"  id="haut1">
+
+        <div class="dff">
+		<div class="df" style="margin-left:19px;">
+
+
+
+                                     </div>
+        </div>
+
+
+        <div class="col-xl-7 col-lg-6" style="width:100%;">
+            <div class="product-details-content-area product-details--golden" data-aos="fade-up"
+                data-aos-delay="200">
+                <!-- Start  Product Details Text Area-->
+                <div class="col-16 d-flex" style="align-items:center;justify-content:center;">
+                <div class="rond-img" style="width:60px;height:60px;justify-content:left;background:#ad0a0a;border-radius: 50px;">
+                            <img src="/photo/profile/{{$voirs->User ? $voirs->User->image:''}}" style="width:60px;height:60px;border-radius: 50px;">
+                        </div>
+          
+                 
+                    <div class="product-details-meta" style="width:350px;padding-left:8px;">
+                    <h6 style="font-size: 20px;">{{ $voirs->User ? $voirs->User->prenom:'' }} {{ $voirs->User ? $voirs->User->name:'' }}
+                   <p style="font-size: 14px;"> Membres depuis : 2 ans</p>
+                </h6>
+                     
+</div>
+                        
+                            
+
+
+   
+
+</div>
+                    <br>
+                    <div class="d-flex align-items-center">
+                        <ul class="review-star d-flex">
+                            <li class="btn btn-lg" style="padding:4px;text-align:center;color:white;">   <a style="color: black;" href="#"data-bs-toggle="modal" style="color: white;" data-bs-target="#modalAddcart"
+                                style="border-radius:20px;"
+                               ><img src="{{asset('image/tel.jpg')}}" width="20px;"height="20px;"> telephone</a> </li>
+
+
+
+                             <li  class="btn btn-lg" style="margin-left:15px;padding:4px;text-align:center;">  <a style="color:black;" href="https://web.whatsapp.com/send?phone=+22246463096&text=Test%20Link%20WhatsApp" style="color: white;"
+
+                               ><img src="{{asset('image/wt.png')}}" width="25px;"height="25px;"> whatsapp</a></li>
+
+
+
+
+
+
+                        </ul>
+
+                    </div>
+                    <br>
+                    <div class="price">
+                        <h3 style="color: #ad0a0a;"><strong>{{$voirs->prix_prod}} MRU</strong></h3>
+                    </div>
+
+                    <div class="price">
+                        <h5><strong>{{$voirs->titre_prod}}</strong></h5>
+                    </div>
+                    <div class="product-details-variable"style="padding:0px;">
+
+                        <div class="product-details-meta" style="width:350px;padding:0px;">
+                            <a href="wishlist.html" class="icon-space-left">    <i class="fa fa-map-marker" style="font-size:20px; "></i>  Mauritanie, Nouadhibou</a>
+                            <a href="compare.html" class="icon-space-right"><i class="fa fa-bookmark" aria-hidden="true"></i>{{$voirs->sous__categorie ? $voirs->sous__categorie->nom_type:''}}</a>
+
+                        </div>
+
+                     
+
+
+                       
+                        <div class="product-details-meta" style="width:370px;padding:0px;">
+                            <a href="wishlist.html" class="icon-space-left">    <i class="fa fa-bookmark" aria-hidden="true"></i> Type Offert:
+                            @if($voirs->type_offre==1)
+                            <strong> Vente</strong>
+                            @elseif($voirs->type_offre==0)
+                            <strong> Vente</strong>
+                            @endif
+                        </a>
+                           
+                            @if($voirs->livraison==1)
+                            <a href="compare.html" class="icon-space-right"><i class="fa fa-motorcycle"style="font-size:25px; "aria-hidden="true"></i> Livraison :<strong> Offert</strong></a>
+                           @endif
+                        </div>
+                       
+                        <center><a href="compare.html" class="icon-space-right">{{$voirs->created_at}} <i class="fa fa-clock-o" aria-hidden="true"></i>
+                        </a></center>
+
+
+
+                    </div> <!-- End Product Variable Area -->
+                     <div class="col-24" id="lag">
+                        <strong><h3>detail du produit</h3></strong>
+                    <p>{{$voirs->description}}</p>
+                    </div>
+                </div> <!-- End  Product Details Text Area-->
+                <!-- Start Product Variable Area -->
+
+
+
+
+
+            </div>
+        </div>
+			<hr>
+
+
+
+
+
+                    <div class="col-5">
+			<form class="btn33" method="POST" action="{{route('signalez.store' )}}">
+            @csrf
+            
+                <input type="hidden" name="id" value="{{ $voirs->User ? $voirs->User->id:'' }}">
+                <button type="submit"> Signalez ce vendeur</button>
+           </form>
+</div>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  <div class="row">
+                    <div class="col-lg-6 col-md-6">
+
+                        <h3
+                        style="
+                        background:#A52A2A ;text-align:center;>
+                        "
+                        ><strong style="padding-left:5px;color:#A52A2A;
+                        padding-right:5px;
+                        font-size:15px;border-radius:100%;background:white;">1</strong> Séléctionnez un catégorie</h3>
+                             <center><p>Décrivez votre bien immobilier</p></center>
+                        <div class="order_table table-responsive">
+                            <table>
+
+                                <tbody>
+                                    <tr style="border:solid 0px;">
+
+
+                                        <td style="border:solid 0px;">
+
+                                          <div class="container1">
+                                            <div class="row">
+
+
+                                    @foreach($cat_imm as $cat_imms)
+
+                                          <label class="option_item" style="width: 100px;">
+
+                                            <input type="radio" style="width: 100px;" name="sous_cat" value="{{$cat_imms->id}}"  class="checkbox" checked>
+                                            <div class="option_inner facebook" style="width: 100px;border:solid 1px #A52A2A;">
+
+                                              <div class="icon" style="width:100px;padding-top:10px;">
+                                              <i class="{{$cat_imms->icon ? $cat_imms->icon->nom_icon:''}}" style="font-size:25px;" aria-hidden="true"></i>
+                                           </div>
+                                              <div class="name" style="width:100px;"><p>{{$cat_imms->nom_type}}</p></div>
+                                            </div>
+                                          </label>
+                                    @endforeach
+
+                                        </div>
+                                        </div>
+                                                        </td>
+
+
+
+
+
+
+                                    </tr>
+                                    <tr>
+
+
+                                </tbody>
+
+                            </table>
+                        </div>
